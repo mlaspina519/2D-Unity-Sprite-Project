@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    void ChangeDirection() {
+    public void ChangeDirection() {
         facingLeft = !facingLeft;
     }
 }

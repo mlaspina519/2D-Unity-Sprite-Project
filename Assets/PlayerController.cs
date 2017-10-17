@@ -40,12 +40,13 @@ public class PlayerController : MonoBehaviour {
 
     // Shoots bullet 
     void OnFireInput() {
-        Vector2 position = new Vector2(transform.localScale.x, transform.localScale.y);
-
         // Shoots in correct direction
-        if(facingRight) {
-            Instantiate(bullet, transform.position, Quaternion.identity);
-        }
-        Instantiate(bullet, transform.position, Quaternion.identity);
+		if (facingRight) {
+			GameObject clone = (GameObject)Instantiate (bullet, transform.position, Quaternion.identity);
+			clone.transform.localScale = new Vector2(-bullet.transform.localScale.x, bullet.transform.localScale.y);
+			clone.GetComponent<Movement>().ChangeDirection();
+		} else {
+			Instantiate(bullet, transform.position, Quaternion.identity);
+		}
     }
 }
