@@ -8,13 +8,13 @@ public class Movement : MonoBehaviour {
     private bool facingLeft = true;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		rigid = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-        if (facingLeft) {
+	void FixedUpdate() {
+        if(facingLeft) {
             rigid.velocity = -movement * Time.fixedDeltaTime;
         } else {
             rigid.velocity = movement * Time.fixedDeltaTime;

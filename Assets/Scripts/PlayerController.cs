@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// User input - Once per frame
-	void Update () {
+	void Update() {
         horizontalMovement = Input.GetAxis("Horizontal");
         verticalMovement = Input.GetAxis("Vertical");
 
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
         rigid.velocity = new Vector2(horizontalMovement * speed, rigid.velocity.x);
 
 		// Flips plane when changing directions
-		if (horizontalMovement < 0 && facingRight || horizontalMovement > 0 && !facingRight) {
+		if(horizontalMovement < 0 && facingRight || horizontalMovement > 0 && !facingRight) {
 			transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
             facingRight = !facingRight;
 		}
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     // Shoots bullet 
     void OnFireInput() {
         // Shoots in correct direction
-		if (facingRight) {
+		if(facingRight) {
 			GameObject clone = (GameObject)Instantiate (bullet, transform.position, Quaternion.identity);
 			clone.transform.localScale = new Vector2(-bullet.transform.localScale.x, bullet.transform.localScale.y);
 			clone.GetComponent<Movement>().ChangeDirection();
