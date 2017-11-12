@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour {
 	private float verticalMovement;
 	private float speed = 7.0f;
     private bool facingRight = false;
+    public int health = 3;
     private  Rigidbody2D rigid;
-    public GameObject bullet;
+    public GameObject bulletBill;
 
-	// Initialization
-	void Start() {
+    public int Health { get { return health; } }
+
+    // Initialization
+    void Start() {
             rigid = GetComponent<Rigidbody2D>();
 	}
 	
@@ -42,11 +45,16 @@ public class PlayerController : MonoBehaviour {
     void OnFireInput() {
         // Shoots in correct direction
 		if(facingRight) {
-			GameObject clone = (GameObject)Instantiate (bullet, transform.position, Quaternion.identity);
-			clone.transform.localScale = new Vector2(-bullet.transform.localScale.x, bullet.transform.localScale.y);
-			clone.GetComponent<Movement>().ChangeDirection();
+			GameObject bullet = (GameObject)Instantiate (bulletBill, transform.position, Quaternion.identity);
+			bullet.transform.localScale = new Vector2(-bullet.transform.localScale.x, bullet.transform.localScale.y);
+			bullet.GetComponent<PlayerBullet>().ChangeDirection();
 		} else {
-			Instantiate(bullet, transform.position, Quaternion.identity);
-		}
+			Instantiate(bulletBill, transform.position, Quaternion.identity);
+        }
+    }
+
+    // Reduces health
+    public void Hit() {
+        health--;
     }
 }
