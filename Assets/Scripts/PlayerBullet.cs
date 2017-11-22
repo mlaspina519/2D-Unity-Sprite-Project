@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBullet : MonoBehaviour {
     private Rigidbody2D rigid;
@@ -36,6 +37,7 @@ public class PlayerBullet : MonoBehaviour {
                 audio.Play();
                 Destroy(other.gameObject, .5f);
                 Destroy(this.gameObject, .5f);
+                SceneManager.LoadScene("Medium");
             } else {
                 audio.Play();
                 Destroy(this.gameObject, .5f);

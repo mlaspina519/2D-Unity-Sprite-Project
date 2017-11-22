@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour {
     public int health = 3;
     private  Rigidbody2D rigid;
     public GameObject bulletBill;
-
     public int Health { get { return health; } }
 
     // Initialization

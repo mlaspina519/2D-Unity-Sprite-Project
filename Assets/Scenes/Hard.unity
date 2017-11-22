@@ -140,7 +140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29864454, y: 0.022254683}
   m_AnchorMax: {x: 0.29864454, y: 0.09349064}
-  m_AnchoredPosition: {x: 13.734, y: 0.16999996}
+  m_AnchoredPosition: {x: 13.734009, y: 0.16999817}
   m_SizeDelta: {x: 27.3, y: 0.3399999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117219713
@@ -685,7 +685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12574217, y: 0}
   m_AnchorMax: {x: 0.29777345, y: 0.16474533}
-  m_AnchoredPosition: {x: 0.42999983, y: 0.9000101}
+  m_AnchoredPosition: {x: 0.42999268, y: 0.90000916}
   m_SizeDelta: {x: 0.85999966, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387862457
@@ -1036,7 +1036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29864454, y: 0.0953633}
   m_AnchorMax: {x: 0.29864454, y: 0.16474533}
-  m_AnchoredPosition: {x: 13.622, y: 0.24000001}
+  m_AnchoredPosition: {x: 13.622009, y: 0.2400055}
   m_SizeDelta: {x: 27.3, y: 1.3400002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876044243
@@ -1158,8 +1158,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2052573631}
   - component: {fileID: 2052573630}
-  - component: {fileID: 2052573632}
   - component: {fileID: 2052573633}
+  - component: {fileID: 2052573632}
   - component: {fileID: 2052573634}
   m_Layer: 0
   m_Name: EnemyPlane
@@ -1231,12 +1231,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2052573629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248223ca0e78c8d4a82e9116c4c1b541, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ba5ed0ed02456140ad50366d959bb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 1018933529}
+  bulletBill: {fileID: 1228797091777942, guid: 729b380b7bcdaec459c0fca864e89dae, type: 2}
   health: 3
-  movement: {x: 300, y: 100}
-  bulletBill: {fileID: 1278567159379948, guid: d0a3eac9fd57c49488cca226e7fbaf2d, type: 2}
 --- !u!50 &2052573633
 Rigidbody2D:
   serializedVersion: 4
