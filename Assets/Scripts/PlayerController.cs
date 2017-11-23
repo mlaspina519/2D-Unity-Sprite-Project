@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	private float verticalMovement;
 	private float speed = 7.0f;
     private bool facingRight = false;
-    public int health = 3;
+    public int health = 5;
     private  Rigidbody2D rigid;
     public GameObject bulletBill;
     public int Health { get { return health; } }

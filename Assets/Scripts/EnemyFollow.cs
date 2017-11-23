@@ -24,11 +24,11 @@ public class EnemyFollow : MonoBehaviour {
     }
     
     void Update() {
-        // Look towards player
-            myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+    // Look towards player
+    myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 
-            // Move towards player
-            myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+    // Move towards player
+    myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
     }
 
     public void Hit() {

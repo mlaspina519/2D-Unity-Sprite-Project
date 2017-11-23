@@ -8,11 +8,13 @@ public class PlayerBullet : MonoBehaviour {
     private new AudioSource audio;
     public Vector2 movement = new Vector2(200, 0);
     private bool facingLeft = true;
+    Scene scene;
 
-	// Use this for initialization
-	void Start() {
+    // Use this for initialization
+    void Start() {
 		rigid = GetComponent<Rigidbody2D>();
         audio = GetComponent<AudioSource>();
+        scene = SceneManager.GetActiveScene();
     }
 	
 	// Update is called once per frame
@@ -37,7 +39,13 @@ public class PlayerBullet : MonoBehaviour {
                 audio.Play();
                 Destroy(other.gameObject, .5f);
                 Destroy(this.gameObject, .5f);
-                SceneManager.LoadScene("Medium");
+                if (scene.name == "Easy") {
+                    SceneManager.LoadScene("Medium");
+                } else if (scene.name == "Medium") {
+                    SceneManager.LoadScene("Hard");
+                } else if (scene.name == "Hard") {
+                    //SceneManager.LoadScene("Hard");
+                }
             } else {
                 audio.Play();
                 Destroy(this.gameObject, .5f);
