@@ -43,13 +43,24 @@ public class PlayerBullet : MonoBehaviour {
                     SceneManager.LoadScene("Medium");
                 } else if (scene.name == "Medium") {
                     SceneManager.LoadScene("Hard");
-                } else if (scene.name == "Hard") {
-                    //SceneManager.LoadScene("Hard");
-                }
+                } 
             } else {
                 audio.Play();
                 Destroy(this.gameObject, .5f);
                 other.GetComponent<EnemyController>().Hit();
+            }
+        }
+
+        if(other.CompareTag("Hard Enemy")) {
+            if(other.GetComponent<EnemyFollow>().Health == 1) {
+                audio.Play();
+                Destroy(other.gameObject, .5f);
+                Destroy(this.gameObject, .5f);
+                //SceneManager.LoadScene("Scores");
+            } else {
+                audio.Play();
+                Destroy(this.gameObject, .5f);
+                other.GetComponent<EnemyFollow>().Hit();
             }
         }
     }

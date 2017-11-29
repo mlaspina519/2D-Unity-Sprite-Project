@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour {
+    //private Rigidbody2D rigid;
     private Transform target;   //target of enemy
     public Transform myTransform;   // current transform data
     float moveSpeed = 3.0f;     // speed
@@ -14,6 +15,7 @@ public class EnemyFollow : MonoBehaviour {
 
     // Cache data
     void Awake() {
+        //rigid = GetComponent<Rigidbody2D>();
         myTransform = transform;
     }
     
@@ -26,7 +28,7 @@ public class EnemyFollow : MonoBehaviour {
     void Update() {
     // Look towards player
     myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-
+   
     // Move towards player
     myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
     }

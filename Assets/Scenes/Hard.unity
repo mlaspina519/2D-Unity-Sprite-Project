@@ -865,6 +865,7 @@ GameObject:
   - component: {fileID: 1829724111}
   - component: {fileID: 1829724110}
   - component: {fileID: 1829724109}
+  - component: {fileID: 1829724113}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -950,6 +951,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1829724113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829724108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d0906f21baaf04e975cbe6f4defde5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 1876044243}
+  playerHealth: {fileID: 117219713}
+  player: {fileID: 1018933530}
+  enemy: {fileID: 2052573632}
 --- !u!1 &1838866068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1179,7 @@ GameObject:
   - component: {fileID: 2052573634}
   m_Layer: 0
   m_Name: EnemyPlane
-  m_TagString: Enemy
+  m_TagString: Hard Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
