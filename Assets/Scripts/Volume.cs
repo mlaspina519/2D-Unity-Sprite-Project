@@ -7,7 +7,9 @@ public class Volume : MonoBehaviour {
     public Slider slider;
 
     void Start() {
-        slider = GetComponent<Slider>();
+		if(slider == null) {
+			slider = GetComponent<Slider>();
+		}
     }
 
     public void OnValueChanged() {

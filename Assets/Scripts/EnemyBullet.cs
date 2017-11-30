@@ -36,6 +36,9 @@ public class EnemyBullet : MonoBehaviour {
         // Damages enemy if bullet came from player
         if(other.CompareTag("Player")) {
             if (other.GetComponent<PlayerController>().Health == 1) {
+                if(GlobalControl.Instance.getScore() > 0) {
+                    GlobalControl.Instance.setScore();
+                }
                 audio.Play();
                 Destroy(other.gameObject, .5f);
                 Destroy(this.gameObject, .5f);
@@ -47,6 +50,9 @@ public class EnemyBullet : MonoBehaviour {
                     SceneManager.LoadScene("Hard");
                 }
             } else {
+                if (GlobalControl.Instance.getScore() > 0) {
+                    GlobalControl.Instance.setScore();
+                }
                 audio.Play();
                 Destroy(this.gameObject, .5f);
                 other.GetComponent<PlayerController>().Hit();
