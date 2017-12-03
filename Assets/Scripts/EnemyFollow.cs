@@ -26,11 +26,17 @@ public class EnemyFollow : MonoBehaviour {
     }
     
     void Update() {
+        Vector3 targetDirection = target.position - transform.position;
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg + 180;
+        Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, quaternion, 180);
+        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
     // Look towards player
-    myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+    //myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
    
     // Move towards player
-    myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+    //myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
     }
 
     public void Hit() {

@@ -56,7 +56,7 @@ public class PlayerBullet : MonoBehaviour {
                 audio.Play();
                 Destroy(other.gameObject, .5f);
                 Destroy(this.gameObject, .5f);
-                //SceneManager.LoadScene("Scores");
+               SceneManager.LoadScene("End");
             } else {
                 audio.Play();
                 Destroy(this.gameObject, .5f);

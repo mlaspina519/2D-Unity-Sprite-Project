@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc699e26ba988894286743ed60cabe5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: 200, y: 0}
+  movement: {x: 400, y: 0}
 --- !u!212 &212580029329664734
 SpriteRenderer:
   m_ObjectHideFlags: 1
